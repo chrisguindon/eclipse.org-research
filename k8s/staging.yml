@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eclipse.org-research-staging
+  namespace: foundation-internal-webdev-apps
+spec:
+  selector:
+    matchLabels:
+      app: eclipse.org-research
+      environment: staging
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: eclipse.org-research
+        environment: staging
+    spec:
+      containers:
+      - name: nginx
+        image: eclipsefdn/eclipse.org-research
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 200m
+            memory: 64Mi
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: eclipse-org-research-staging
+  namespace: foundation-internal-webdev-apps
+spec:
+  ports:
+  - name: "http"
+    port: 80
+    protocol: "TCP"
+    targetPort: 8080
+  selector:
+    app: eclipse.org-research
+    environment: staging
+---
+apiVersion: "route.openshift.io/v1"
+kind: "Route"
+metadata:
+  name: eclipse.org-research-staging
+  namespace: foundation-internal-webdev-apps
+  annotations:
+    haproxy.router.openshift.io/timeout: 20s
+spec:
+  host: "staging.eclipse.org"
+  path: "/org/research"
+  port:
+    targetPort: "http"
+  tls:
+    insecureEdgeTerminationPolicy: "Redirect"
+    termination: "edge"
+  to:
+    kind: "Service"
+    name: eclipse-org-research-staging
+    weight: 100
