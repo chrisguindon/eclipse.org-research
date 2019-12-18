@@ -34,4 +34,7 @@ RUN npm --unsafe-perm ci \
 
 FROM eclipsefdn/nginx:${NGINX_IMAGE_TAG}
 
-COPY --from=builder /workdir/public/ /usr/share/nginx/html/
+RUN mkdir -p /usr/share/nginx/html/org/research \
+    && chgrp -R 0 /usr/share/nginx/html/org/research \
+    && chmod -R g=rwxs /usr/share/nginx/html/org/research
+COPY --from=builder /workdir/public/ /usr/share/nginx/html/org/research/
