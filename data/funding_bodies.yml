@@ -1,0 +1,21 @@
+items:
+   - name: Horizon 2020
+     id: "horizon2020"
+     link: https://ec.europa.eu/programmes/horizon2020/en
+     logo: /images/funding/horizon-2020.png
+   - name: ITEA 3 
+     id: "itea3"
+     link: https://itea3.org/
+     logo: /images/funding/itea3.png
+   - name: ECSEL Joint Undertaking
+     id: "ecsel"
+     link: https://www.ecsel.eu/
+     logo: /images/funding/ecsel.png
+   - name: Bundesministerium für Bildung und Forschung
+     id: "bmbf"
+     link: https://www.bmbf.de/
+     logo: /images/funding/bmbf.png
+   - name: Artemis Industry Association
+     id: "artemis"
+     link: https://artemis-ia.eu/
+     logo: /images/funding/artemis.png

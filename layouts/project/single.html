@@ -1,0 +1,110 @@
+{{ define "main" }}
+	<div class="margin-bottom-30">
+		{{ .Content }}
+	</div>
+	{{ if gt (len .Params.eclipse_projects) 0 }}
+	<h2 class="margin-bottom-40">Eclipse projects</h2>
+	<div class="row">
+	{{ range .Params.eclipse_projects }}
+		{{range first 1 (where $.Site.Data.eclipsefdn_projects "project_id" .) }}
+		<div class="col-sm-12 margin-bottom-30 match-height-item-by-row flex-column project-item">
+		  <div class="padding-20 text-center background-white flex-grow">
+		    <div class="margin-bottom-25 margin-top-20">
+		      <h3>
+		        <a href="{{ .url }}">
+			      <img class="img img-responsive margin-auto padding-bottom-20 " src="{{ .logo }}" title="{{ .name }} logo"/>
+				  {{ .name }}
+			    </a>
+			  </h3>
+			  <p>{{ .summary | safeHTML }}</p>
+			  <a href="{{.url}}">Read more about {{ .name }}</a>
+			</div>
+		  </div>
+	    </div>
+		{{ end }}
+	{{ end }}
+	</div>
+	{{ end }}
+{{ end }}
+
+{{ define "main_suffix" }}
+	</div>
+	<div class="col-xs-24 col-md-6 project-list-sidebar">
+		<div class="sidebar-panel margin-top-20 margin-bottom-20">
+          {{ if .Params.logo }}
+		    <img class="img img-responsive margin-auto padding-bottom-20" src="{{ .Params.logo | relURL }}" alt="{{ .Title }} logo" height="75"/>
+          {{ else }}
+            <i style="width:95px;height:95px;" class="center-block" data-feather="file-text" stroke-width="1"></i>
+          {{ end }}
+		</div>
+		{{ if or (.Params.homepage) (.Params.facebook) (.Params.linkedin) (.Params.twitter) (.Params.youtube)}}
+		<div class="sidebar-panel margin-top-20 margin-bottom-20 clearfix">
+			<h2>Social links</h2>
+			<ul id="social-media-links" class="list-inline text-center">
+				{{ if .Params.homepage }}
+				<li class="padding-10 col-xs-4 col-md-12">
+					<a class="fa-stack fa-lg" href=" {{ .Params.homepage }}" title="Homepage of {{ .Title }}" target="_blank">
+						<i class="fa fa-stack-2x fa-circle-thin"></i>
+						<i class="fa fa-stack-1x fa-globe"></i>
+					</a>
+				</li>
+				{{ end }}
+				{{ if .Params.facebook }}
+				<li class="padding-10 col-xs-4 col-md-12">
+					<a class="fa-stack fa-lg" href=" {{ .Params.facebook }}" title="Facebook page of {{ .Title }}" target="_blank">
+						<i class="fa fa-stack-2x fa-circle-thin"></i>
+						<i class="fa fa-stack-1x fa-facebook"></i>
+					</a>
+				</li>
+				{{ end }}
+				{{ if .Params.linkedin }}
+				<li class="padding-10 col-xs-4 col-md-12">
+					<a class="fa-stack fa-lg" href=" {{ .Params.linkedin }}" title="LinkedIn of {{ .Title }}" target="_blank">
+						<i class="fa fa-stack-2x fa-circle-thin"></i>
+						<i class="fa fa-stack-1x fa-linkedin"></i>
+					</a>
+				</li>
+				{{ end }}
+				{{ if .Params.twitter }}
+				<li class="padding-10 col-xs-4 col-md-12">
+					<a class="fa-stack fa-lg" href=" {{ .Params.twitter }}" title="Twitter feed of {{ .Title }}" target="_blank">
+						<i class="fa fa-stack-2x fa-circle-thin"></i>
+						<i class="fa fa-stack-1x fa-twitter"></i>
+					</a>
+				</li>
+				{{ end }}
+				{{ if .Params.youtube }}
+				<li class="padding-10 col-xs-4 col-md-12">
+					<a class="fa-stack fa-lg" href=" {{ .Params.youtube }}" title="YouTube account of {{ .Title }}" target="_blank">
+						<i class="fa fa-stack-2x fa-circle-thin"></i>
+						<i class="fa fa-stack-1x fa-youtube"></i>
+					</a>
+				</li>
+				{{ end }}
+			</ul>
+		</div>
+		{{ end }}
+		{{ if gt (len .Params.funding_bodies) 0 }}
+		<div class="sidebar-panel margin-top-20 margin-bottom-20">
+			<h2>Funded by</h2>
+			<ul class="list-inline">
+				{{ range .Params.funding_bodies }}
+					{{ $id:=.}}
+					{{ range first 1 (where $.Site.Data.funding_bodies.items "id" $id) }}
+						<li class="vertical-align padding-10">
+							<a href="{{.link}}" title="{{ .name }} homepage" target="_blank">
+								{{ if .logo }}
+								<img class="img img-responsive" src="{{ .logo | relURL }}" alt="{{ .name }} logo" height="75"/>
+								{{ else }}
+								<i style="width:75px;height:75px;" class="center-block" data-feather="file-text" stroke-width="1"></i>
+								{{ end }}
+							</a>
+						</li>
+					{{ end }}
+				{{ end }}
+			</ul>
+		</div>
+		{{ end }}
+  	</div>
+</main>
+{{ end }}

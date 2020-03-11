@@ -1,0 +1,20 @@
+<div class="col-sm-12 col-md-6 margin-bottom-30 match-height-item-by-row flex-column project-item" data-delimit="|" data-tags="{{ delimit .Params.tags "|" }}">
+  <div class="padding-20 text-center background-white flex-grow">
+    <h2 class="h4">
+      <a href="{{ .Permalink }}">
+  	    <span class="vertical-align margin-bottom-20" style="height:75px">
+          {{ if .Params.logo }}
+	      <img class="img img-responsive margin-auto padding-15" src="{{ .Params.logo | relURL }}" alt="{{ .Title }} logo" height="75"/>
+          {{ else }}
+          <i style="width:95px;height:95px;" class="center-block" data-feather="file-text" stroke-width="1"></i>
+          {{ end }}
+  	    </span>
+        {{ .Title }}
+      </a>
+    </h2>
+    <p>{{ .Summary }}</p>
+  </div>
+  <div class="project-type {{ .Params.project_type }}-project padding-10 text-center fw-700">
+	<p class="margin-0 uppercase">{{ .Params.project_type }}</p>
+  </div>
+</div>
