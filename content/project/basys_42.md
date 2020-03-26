@@ -8,8 +8,8 @@ facebook: ""
 linkedin: ""
 twitter: ""
 youtube: ""
-funding_bodies: []
-eclipse_projects: []
+funding_bodies: ["bmbf"]
+eclipse_projects: ["technology.basyx"]
 project_type: running
 summary: "Digitalizes manufacturing processes and integrates the devices on the shopfloor with a company‘s IT."
 ---

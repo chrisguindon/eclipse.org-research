@@ -3,13 +3,13 @@ title: "Panorama"
 date: 2020-03-11T14:40:20-04:00
 logo: "/images/research/panorama.png"
 tags: ["System of Systems", "Modeling"]
-homepage: ""
+homepage: "https://www.panorama-research.org/"
 facebook: ""
 linkedin: ""
-twitter: ""
+twitter: "https://twitter.com/PanoramaEng"
 youtube: ""
-funding_bodies: []
-eclipse_projects: []
+funding_bodies: ["itea3", "bmbf"]
+eclipse_projects: ["technology.app4mc"]
 project_type: running
 summary: "Model-based methods and tools to master design and development of heterogeneous systems."
 ---

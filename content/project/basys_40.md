@@ -1,15 +1,15 @@
 ---
-title: "Basys"
+title: "BasSys 4.0"
 date: 2020-03-12T09:22:42-04:00
-logo: "/images/research/basyx.png"
-tags: []
-homepage: ""
+logo: "/images/research/basys4_0.png"
+tags: ["Standard", "Industry 4.0"]
+homepage: "https://www.basys40.de/"
 facebook: ""
 linkedin: ""
 twitter: ""
 youtube: ""
-funding_bodies: []
-eclipse_projects: []
+funding_bodies: ["bmbf"]
+eclipse_projects: ["technology.basyx"]
 project_type: success
 summary: "Provide virtual middleware for industrial automation which implements Industry 4.0 concepts."
 ---

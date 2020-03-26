@@ -2,7 +2,7 @@
 title: "Arrowhead Tools"
 date: 2020-03-11T14:37:57-04:00
 logo: "/images/research/arrowheadtools.png"
-tags: ["System of Systems", "IoT"]
+tags: ["System of Systems", "IoT", "Industry 4.0"]
 homepage: "https://arrowhead.eu/arrowheadtools"
 facebook: "https://m.facebook.com/vah.sah.14"
 linkedin: "https://www.linkedin.com/groups/5071265/"

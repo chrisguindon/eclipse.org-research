@@ -15,6 +15,10 @@ items:
      id: "bmbf"
      link: https://www.bmbf.de/
      logo: /images/funding/bmbf.png
+   - name: Bundesministerium für Wirtschaft und Energie
+     id: "bmwi"
+     link: https://www.bmwi.de/
+     logo: /images/funding/bmwi.png
    - name: Artemis Industry Association
      id: "artemis"
      link: https://artemis-ia.eu/
