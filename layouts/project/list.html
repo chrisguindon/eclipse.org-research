@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main id="content">
+  <div class="row project-list">
+    {{ range sort (where .Site.RegularPages "Section" "project") "Title" }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </div>
+</main>
+{{ end }}

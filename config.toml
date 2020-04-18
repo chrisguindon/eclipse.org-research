@@ -47,9 +47,6 @@ pluralizeListTitles = false
 [blackfriday]
   plainIDAnchors = true
   hrefTargetBlank = true
-
-[markup.goldmark.renderer]
-  unsafe= true
   
 [[menu.main]]
     name = "Members"
