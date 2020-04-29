@@ -11,6 +11,7 @@ container: "container-fluid"
 show_featured_story: false
 show_featured_footer: false
 layout: single
+header_wrapper_class: "header-default-bg-img"
 ---
 
 {{< home-section-header >}}
